@@ -1,0 +1,44 @@
+<h3 style="text-align: center; font-family: sans-serif; color:#448eb8; font-weight: bold; font-size: 1cm">Featured Businesses</h3>
+<div style="margin-left: 10%; margin-right:10% ">
+<table style="font-family: Arial, Arial, Helvetica, sans-serif; margin: auto">
+<tr>
+<td style="padding: 10px 10px 10px 10px; text-align:center">
+<button type="button"  onclick="visibility('Members A-Z')" style="display: inline-block; text-decoration:none; height: 65px; background-color:#4d97E4; border-radius: 5px; padding: 0px 30px 0px 0px" href="http://www.google.com">
+<span style="color:#fff !important;height: 65px; white-space:nowrap; line-height: 65px; font-size: 18px; padding: 0px 0px 0px 30px; display: block; font-weight: bold; text-shadow: 0px 1px 1px rgb(0,0,0); text-align: center; font-family: Arial, Arial, Helvetica, sans-serif">Members A-Z</span>
+</button>
+</td>
+<td style="padding: 10px 10px 10px 10px; text-align:center">
+<button type="button"  onclick="visibility('Category')" style="display: inline-block; text-decoration:none; height: 65px; background-color:#4d97E4; border-radius: 5px; padding: 0px 30px 0px 0px" href="http://www.google.com">
+<span style="color:#fff !important;height: 65px; white-space:nowrap; line-height: 65px; font-size: 18px; padding: 0px 0px 0px 30px; display: block; font-weight: bold; text-shadow: 0px 1px 1px rgb(0,0,0); text-align: center; font-family: Arial, Arial, Helvetica, sans-serif">Category</span>
+</button>
+</td>
+<td style="padding: 10px 10px 10px 10px; text-align:center">
+<button type="button"  onclick="visibility('Associates')" style="display: inline-block; text-decoration:none; height: 65px; background-color:#4d97E4; border-radius: 5px; padding: 0px 30px 0px 0px" href="http://www.google.com">
+<span style="color:#fff !important;height: 65px; white-space:nowrap; line-height: 65px; font-size: 18px; padding: 0px 0px 0px 30px; display: block; font-weight: bold; text-shadow: 0px 1px 1px rgb(0,0,0); text-align: center; font-family: Arial, Arial, Helvetica, sans-serif">Associates</span>
+</button>
+</td>
+</tr>
+</table>
+<table id="Members A-Z" style="font-family: Arial, Arial, Helvetica, sans-serif; margin: auto;">
+<tr><td><strong>All Members from A to Z</strong></td><tr>
+<tr><td>B</td><tr>
+<tr>
+<td style="padding: 10px 10px 10px 10px; color:#6d6d6d" width="25%">
+<strong style="color: #a88d2e">Ben's Business</strong>
+<br>1234 Address Wy
+<br>Saginaw,  MI 48638 
+<br>989-222-2222
+<br>
+<br><a href="https://www.google.com/maps/search/?api=1&query=1234+Address+Wy%2C+48638 " target="_blank">Map</a> | <a href="mailto:ben@dore.com ">Email</a> | <a href="http://www.dore.com" target="_blank">Web</a>
+</td>
+</table>
+<table id="Category" hidden="hidden" style="font-family: Arial, Arial, Helvetica, sans-serif; margin: auto;">
+<tr><td><strong>Members by Category</strong></td><tr>
+</table>
+<table id="Associates" hidden="hidden" style="font-family: Arial, Arial, Helvetica, sans-serif; margin: auto;">
+<tr><td><strong>Associates Members</strong></td><tr>
+</table>
+</div>
+<script>
+function visibility(id) {var x = document.getElementById(id);if (id === "Members A-Z") {x.hidden = "";document.getElementById("Category").hidden = "hidden";document.getElementById("Associates").hidden = "hidden";}if (id === "Category") {x.hidden = "";document.getElementById("Members A-Z").hidden = "hidden";document.getElementById("Associates").hidden = "hidden";}if (id === "Associates") {x.hidden = "";document.getElementById("Members A-Z").hidden = "hidden";document.getElementById("Category").hidden = "hidden";}}
+</script>

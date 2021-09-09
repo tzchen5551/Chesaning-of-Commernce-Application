@@ -1,0 +1,153 @@
+﻿<Application x:Class="DirectorsPortalWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DirectorsPortalWPF"
+             StartupUri="MainWindow.xaml">
+
+    <Application.Resources>
+        <!--An example of a Style applied to all TextBlocks
+        
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style> 
+        
+        -->
+
+        <Style TargetType="Button" >
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <ControlTemplate x:Key="sideBarButton" TargetType="Button">
+            <Grid>
+                <Rectangle x:Name="backgroundElement" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" Height="35"/>
+                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Fill" TargetName="backgroundElement" Value="#FFD8D8D8"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Fill" TargetName="backgroundElement" Value="#FFB9B9B9"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="largeToggleButton" TargetType="ToggleButton">
+            <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                <Border x:Name="backgroundElement" Height="35" Background="{TemplateBinding Background}" BorderBrush="#FFACACAC" BorderThickness="1" Padding="{TemplateBinding Padding}" />
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}" TextBlock.Foreground="White" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FF079AD0"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FF098AB9" />
+                </Trigger>
+                <Trigger Property="IsChecked" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FF079AD0"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="false">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="White"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="largeButton" TargetType="Button">
+            <Grid>
+                <Border Padding="10,10,10,10" x:Name="backgroundElement" Height="35" CornerRadius="5" Background="#FF00B0F0" />
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.Foreground="White" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FF079AD0"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FF098AB9" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="smallButton" TargetType="Button">
+            <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                <Border x:Name="backgroundElement" CornerRadius="5" Background="#FF00B0F0" Padding="{TemplateBinding Padding}" />
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.Foreground="White" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FF079AD0"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FF098AB9" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="largeButtonGrey" TargetType="Button">
+            <Grid>
+                <Border Padding="10,10,10,10" x:Name="backgroundElement" Height="35" CornerRadius="5" Background="#FFBFBFBF" />
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.Foreground="White" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FFA4A4A4"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FF838383" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="smallButtonGrey" TargetType="Button">
+            <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                <Border  x:Name="backgroundElement" CornerRadius="5" Background="#FFBFBFBF" Padding="{TemplateBinding Padding}"/>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.Foreground="White" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FFA4A4A4"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FF838383" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="xtraSmallButtonGrey" TargetType="Button">
+            <Grid>
+                <Border Width="50" x:Name="backgroundElement" CornerRadius="5" Background="#FFBFBFBF" Padding="7" />
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.Foreground="White" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FFA4A4A4"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FF838383" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="xtraSmallButton" TargetType="Button">
+            <Grid>
+                <Border Width="50" x:Name="backgroundElement" CornerRadius="5" Background="#FF00B0F0" Padding="7" />
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.Foreground="White" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FF079AD0"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Background" TargetName="backgroundElement" Value="#FF098AB9" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Application.Resources>
+    
+</Application>

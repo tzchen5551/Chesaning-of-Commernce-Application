@@ -1,0 +1,207 @@
+﻿<Page x:Class="DirectorsPortalWPF.MemberInfoUI.ModifyMembersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DirectorsPortalWPF.MemberInfoUI"
+      xmlns:uc="clr-namespace:DirectorsPortalWPF.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditAddMembersPage">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="lblMemberInfo" Grid.Column="0" Grid.Row="0" 
+            Text="Member Info" Foreground="Black" Padding="48,15,15,15" FontSize="20" FontWeight="Bold" />
+        
+        <Grid Margin="50,0,50,0" Grid.ColumnSpan="2" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <SolidColorBrush Color="#FFF1F2F7" />
+            </Grid.Background>
+            <Border Grid.RowSpan="3" BorderBrush="#FFACACAC" BorderThickness="1" CornerRadius="5" />
+
+            <Grid Grid.Row="0" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border Background="#FF00B0F0" Grid.RowSpan="5" Grid.ColumnSpan="3" Height="30" BorderBrush="#FFACACAC" BorderThickness="0" CornerRadius="5,5,0,0"/>
+                <Label x:Name="lblHeader" Content="Add Member" HorizontalAlignment="Left" Foreground="White" Margin="10,0,15,0" VerticalAlignment="Center" />
+            </Grid>
+            
+            <ScrollViewer Grid.Column="0" Grid.Row="1" CanContentScroll="True" HorizontalScrollBarVisibility="Auto" Margin="1,1,1,1">
+                <Grid x:Name="grdForm" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Orientation="Vertical">
+                        <!--Business Info-->
+                        <StackPanel x:Name="SpBusinessInfo" Orientation="Vertical">
+                            <TextBlock TextDecorations="Underline" FontWeight="Bold">
+                                Business Info:
+                            </TextBlock>
+
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">Name:</Label>
+                                <TextBox x:Name="txtBusinessName" Width="400"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">Year Established:</Label>
+                                <TextBox x:Name="txtYearEst" Width="400"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">Website:</Label>
+                                <TextBox x:Name="txtWebsite" Width="400"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">Category:</Label>
+                                <ListBox x:Name ="lbCategories" Height="100" Width="400" SelectionMode="Multiple">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding}"/>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">New Category:</Label>
+                                <TextBox x:Name="txtAddCategory" Width="400" GotFocus="ShowPopup" LostFocus="HidePopup"/>
+                                <Popup x:Name="popNewCategory" PlacementTarget = "{Binding ElementName=txtAddCategory}" IsOpen="False">
+                                    <Label Background="White">Add a new category to the categories list. Category will need to be selected in the above list to be added to the business.</Label>
+                                </Popup>
+                                <Button x:Name="btnAddCategory" Content="Add New Category" Click="BtnAddCategory_Click"
+                                    Template="{StaticResource smallButton}" Margin="5,5,5,5" Height="20" Padding="0,0,80,0" />
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">Notes:</Label>
+                                <TextBox x:Name="txtNotes" TextWrapping="Wrap" AcceptsReturn="True" 
+                                         VerticalScrollBarVisibility="Visible" Width="400" Height="100"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">Level:</Label>
+                                <ComboBox x:Name="cboMemberLevel" Width="200">
+                                    <ComboBoxItem Content="None"></ComboBoxItem>
+                                    <ComboBoxItem Content="Gold"></ComboBoxItem>
+                                    <ComboBoxItem Content="Silver"></ComboBoxItem>
+                                    <ComboBoxItem Content="Associate"></ComboBoxItem>
+                                    <ComboBoxItem Content="Individual"></ComboBoxItem>
+                                    <ComboBoxItem Content="Courtesy"></ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel x:Name="spExtraFields" Margin="0,0,0,10" Orientation="Vertical">
+                                <!--Extra fields are generated in code.-->
+                            </StackPanel>
+                        </StackPanel>
+
+                        <!--Mailing Address-->
+                        <StackPanel x:Name="SpMailingAddress" Orientation="Vertical">
+                            <TextBlock TextDecorations="Underline" FontWeight="Bold">
+                                Mailing Address:
+                            </TextBlock>
+
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">Address:</Label>
+                                <TextBox x:Name="txtMailAddr" Width="400"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">City:</Label>
+                                <TextBox x:Name="txtMailCity" Width="400"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">State:</Label>
+                                <TextBox x:Name="txtMailState" Width="400"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,0,10" Orientation="Horizontal">
+                                <Label Width="100">Zip Code:</Label>
+                                <TextBox x:Name="txtMailZip" Width="400"/>
+                            </StackPanel>
+                        </StackPanel>
+                        
+                        <!--Location Address-->
+                        <TextBlock TextDecorations="Underline" FontWeight="Bold">
+                            Location Address:
+                        </TextBlock>
+
+                        <!--The checkbox needs to stay outslide the Sp so it isn't disabled.-->
+                        <CheckBox x:Name="ChkLocationSameAsMailing" Checked="ChkLocationSameAsMailing_Checked" 
+                            Unchecked="ChkLocationSameAsMailing_Unchecked" Margin="0,5,0,5">Same as mailing</CheckBox>
+
+                        <StackPanel x:Name="SpLocationAddress" Orientation="Vertical">
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">Address:</Label>
+                                <TextBox x:Name="txtLocationAddr" Width="400"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">City:</Label>
+                                <TextBox x:Name="txtLocationCity" Width="400"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,0,3" Orientation="Horizontal">
+                                <Label Width="100">State:</Label>
+                                <TextBox x:Name="txtLocationState" Width="400"/>
+                            </StackPanel>
+
+                            <StackPanel Margin="0,0,0,6" Orientation="Horizontal">
+                                <Label Width="100">Zip Code:</Label>
+                                <TextBox x:Name="txtLocationZip" Width="400"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <!--Contact People-->
+                        <TextBlock TextDecorations="Underline" FontWeight="Bold">
+                            Contacts:
+                        </TextBlock>
+
+                        <StackPanel x:Name="SpContacts" Margin="0,0,0,3" Orientation="Vertical">
+                            <!--Contacts are generated in code.-->
+                        </StackPanel>
+
+                        <StackPanel Margin="5,0,0,3" Orientation="Horizontal">
+                            <Button x:Name="BtnAddContact" Click="BtnAddContact_Click" Content="Add Contact"
+                                    Template="{StaticResource smallButton}" Padding="0,0,80,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="2" Margin="0,0,20,5">
+                <Button x:Name="btnDelete" Click="BtnDelete_Click" Content="Delete" 
+                    Template="{StaticResource smallButtonGrey}" Margin="5,5,5,5" Height="20" Padding="0,0,80,0" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="2" Margin="0,0,20,5">
+                <Button x:Name="btnCancel" Click="BtnCancel_Click" Content="Cancel" 
+                    Template="{StaticResource smallButton}" Margin="5,5,5,5" Height="20" Padding="0,0,80,0" />
+                <Button x:Name="btnModifyMember" Content="Add Member" 
+                    Template="{StaticResource smallButton}" Margin="5,5,5,5" Height="20" Padding="0,0,80,0" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

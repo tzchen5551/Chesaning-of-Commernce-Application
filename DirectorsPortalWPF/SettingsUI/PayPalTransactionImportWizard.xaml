@@ -1,0 +1,40 @@
+﻿<Window x:Class="DirectorsPortalWPF.SettingsUI.PayPalTransactionImportWizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DirectorsPortalWPF.SettingsUI"
+        mc:Ignorable="d"
+        Title="PayPal Transaction Import Wizard" Height="535" Width="1035">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Frame Grid.Row="0" Grid.Column="0" x:Name="frmPage" NavigationUIVisibility="Hidden"></Frame>
+
+        <!--Footer-->
+        <Grid Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="lblPageIndex" Grid.Row="0" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+            <Label x:Name="lblCorrectedStatus" Grid.Row="0" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+            <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Click="btnPageBack_Click" x:Name="btnPageBack" Content="&lt; Back" Margin="5,5" Padding="5,0" Template="{StaticResource xtraSmallButton}"/>
+                <Button Click="btnPageNext_Click" x:Name="btnPageNext" Content="Next &gt;"  Margin="5,5" Padding="5,0" Template="{StaticResource xtraSmallButton}"/>
+            </StackPanel>
+            <Button Grid.Row="0" Grid.Column="2" x:Name="btnFinish" Content="Finish" Margin="10,5" Padding="5,0" Template="{StaticResource xtraSmallButton}"
+                HorizontalAlignment="Right" Click="btnFinish_Click"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,71 @@
+Field Name: Business Category <-- Add to Businesses Table		Also add Associate member to MembershipLevel Enum.
+
+Contents:
+Area Information
+Dining and Lodging
+Education
+Manufacturing
+Professional Services
+Radio/Television/Marketing
+Recreation
+Retail Shopping
+Automotive Dealers
+Balloons and Face-Painting
+Cabinetry/Floors/Design
+Campers/Dealers
+Clothing/Shoes
+Convenience Stores/Party Stores
+Craft Supplies
+Distribution Company
+Discount Store
+Feed Dealers
+Gifts
+Grocery
+Hardware
+Jewelers
+Lumber Stores
+Pharmacies
+Pools and Spas
+Tux Rental
+Special Use Facilities
+Marijuana Growing & Processing
+Medical and/or Recreational Marijuana Provisioning
+Accountants and Tax Services
+Advertising and Media
+Newspapers/Commercial Printing/Signs
+Ambulance Service
+Appliance Service/Parts
+Attorneys
+Automotive/Farm Equipment/RV 
+Automotive Parts/Service/Repair/Sales
+Classic Cars/Cargo Haulers
+Farm Equipment Supplier & Service
+Gas/Fuel Stations
+RV Parts/Sales/Service
+Towing/Hauling
+Banks/Credit Unions
+Beauty Salons
+Contractors - Building
+Contractors - Electric
+Contractors - Excavating
+Contractors - Heating/Cooling
+Contractors - Roofing
+Dumpster Rental/Recycling Services
+Financial Services
+Fitness and Tanning
+Funeral Homes and Monument Services
+Interiors/Design
+Health Care
+Assisted Living Home/Nursing Care
+Dental
+Optometrists
+Insurance
+Lawn Care/Landscaping
+Manufactured & Modular Homes
+Mortgages
+Pools/Spas
+Real Estate/Real Estate Appraisal
+Screen Printing/Embroidery
+Septic Tank Services/Porta Johns
+Storage
+Veterinarians

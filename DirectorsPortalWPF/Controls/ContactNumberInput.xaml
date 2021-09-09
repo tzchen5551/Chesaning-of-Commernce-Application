@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="DirectorsPortalWPF.Controls.ContactNumberInput"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DirectorsPortalWPF.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <StackPanel Margin="0,0,0,10" Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <Label Width="100" Content="{Binding GStrInputName}"/>
+            <TextBox x:Name="TxtContactNumber" Width="400"/>
+            <ComboBox x:Name="CboNumberType" Width="80" Margin="5,0,0,0">
+                <ComboBoxItem Content="Mobile"></ComboBoxItem>
+                <ComboBoxItem Content="Office"></ComboBoxItem>
+                <ComboBoxItem Content="Fax"></ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="BtnRemoveNumber" Click="BtnRemoveNumber_Click" 
+                Content="Remove" Margin="5,0,0,0" Padding="0,0,60,0" 
+                Template="{StaticResource smallButtonGrey}"/>
+        </StackPanel>
+
+        <StackPanel Margin="0,3,0,0" Orientation="Horizontal">
+            <Label Width="100" Content="Notes:"/>
+            <TextBox x:Name="txtNumberNotes" TextWrapping="Wrap" AcceptsReturn="True" 
+                VerticalScrollBarVisibility="Visible" Width="400" Height="100"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

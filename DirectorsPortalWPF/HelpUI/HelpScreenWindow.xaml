@@ -1,0 +1,134 @@
+﻿<Window x:Class="DirectorsPortalWPF.HelpUI.HelpScreenWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DirectorsPortalWPF.HelpUI"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Help">
+
+    <ScrollViewer Background="White">
+        <StackPanel>
+            <TextBlock Text="Help" Foreground="Black"  Padding="49,15,0,15" FontSize="20" FontWeight="Bold"/>
+            <TabControl Name="tabs" TabStripPlacement="Top" Background="#FFF1F2F7" BorderThickness="1"  Margin="50,0,50,0">
+                <TabItem Header="Member Info" IsSelected="True" Background="Gray" >
+                    <StackPanel HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top">
+                        <TextBlock TextWrapping="Wrap" Text="The Member Info page is used to display each member's stored information and any pending member changes available." HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />
+                        <Label Content="Adding Members" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" Text="Members can be added to the records by clicking the Add Member button at the bottom of the table. This will show a blank form to fill out the details for the member. The new member is confirmed by clicking the Add Member button on the form once the desired fields are filled out." HorizontalAlignment="Left" Margin="10"/>
+                        <Label Content="Adding Members via PDF" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" Text="Instead of typing in member information by hand, you can use a pre-filled PDF to import member data into the system automatically. Click the 'Add New from PDF' button and select the PDF containing the member details you would like to import. Confirm the data on screen is correct (make changes if necessary) and select the 'Add Member' button." HorizontalAlignment="Left" Margin="10"/>
+                        <Label Content="Editing Members" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="Each member can be edited by clicking the Edit button at the end of the row. This will show a form similar to the Add Member form that is filled with the desired member's information. The member's information is saved by clicking the Add Member button."/></Span></TextBlock>
+                        <Label Content="Editing Members via PDF" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" Text="Just like with adding a member via a PDF file, you can also edit a member with a pre-filled PDF file. If a member fills out a PDF containing changes to their information, you can import those changes automatically by choosing the 'Modify from PDF' button. Any changes in the form will be highlighted in green and you can make changes to the form as necessary. Once you confirm the member's changes, choose 'Update'. NOTE: The business name needs to already exist in the system, otherwise the import will not be able to recognize the business to change. " HorizontalAlignment="Left" Margin="10"/>
+                        <Label Content="Filtering Members" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="Members can be filtered by using the filter text box at the top of the page. This will display all members that match the current filter."/></Span></TextBlock>
+                        <Label Content="Sorting Members" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="Members can be sorted in ascending/descending order by selecting the column header at the top of the table. Clicking the column header will sort the table by that specific header (ex. If selecting 'business name' the table will be sorted by business name)."/></Span></TextBlock>
+                        <Label Content="Export Member to PDF" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="Any member's details can be exported to a PDF with all their information included. Choose the 'Create' option under the 'Generate PDF' column (to the far right) and a PDF export will appear in your 'My Documents' folder. NOTE: You will need to have the required PDF to pre-fill saved in your 'My Documents' folder for this feature to work."/></Span></TextBlock>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Payment Info" IsSelected="False" Background="Gray" Height="22" VerticalAlignment="Bottom" >
+                    <StackPanel HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top">
+                        <TextBlock TextWrapping="Wrap" Text="The Payment Info page displays the payment history for all Chamber members." HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />
+                        <Label Content="Viewing Payment Information" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="Clicking on each member will show a full history of their previous payments. Payment details are also displayed by selecting the desired payment."/></Span></TextBlock>
+                        <Label Content="Adding New Payments" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="From the member's payment history screen, a new payment can also be added by clicking the Add Payment button. The Add Payment window displays a new payment form that can be edited to reflect the payment's information. The payment is stored by clicking the Add Payment button."/></Span></TextBlock>
+                        <Label Content="Editing Existing Payment" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="Current payment records for a member can be edited by selecting the 'Edit' button under the payment description. You can change the payment title, the payment date and any items/costs/quantities associated with a payment. When finished editing a payment, choose 'Save Changes'."/></Span></TextBlock>
+                        <Label Content="Deleting Existing Payment" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="A payment can be deleted from a member's record if the need arises. Choose the 'Delete' button under a payment to remove the payment record from a member. NOTE: This operation is irrevesible."/></Span></TextBlock>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Email Members" IsSelected="False" Background="Gray" Height="22" VerticalAlignment="Bottom" Margin="-2,0" >
+                    <StackPanel HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top">
+                        <TextBlock TextWrapping="Wrap" Text="The Email Members page is used to manage email groups as well as send mass emails to groups or individuals." HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />
+                        <Label Content="Sending an Email" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="The compose email screen is the first view that appears when selecting 'Email Members' from the side panel. You can compose an email message here just like any standard email application. Type in recipient's emails in the 'To:' field, or if you have an email group setup, choose 'Select' next to an email group to add them as a recipient. When entering multple emails individually they should be seperated by a semicolon (;). Type in a subject for your message and the body of your message. Choose the 'Send' option to send your email to the inputted recipients. You will need to authenticate with your email provider using your username and password to send the message. "/></Span></TextBlock>
+                        <Label Content="Attaching Files to Emails" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="You can attach files to your email messages. Choose the 'Attach' button below the email body and browse for your file. Select the file you want and a notification will acknowledge the file was added to your message. You can keep track of the number of files attached next to the 'Attach' button."/></Span></TextBlock>
+                        <Label Content="Adding Email Groups" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="To add a new email group, click the 'Add' button at the top of the Email Groups window. This will display a form to select group members and title the group, as well as store any notes about the email group. This group is saved by clicking the Add button."/></Span></TextBlock>
+                        <Label Content="Editing Email Groups" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="Email groups can be edited by clicking the Edit button following the group's title. This will display a form similar to the New Group form filled with the information about the selected group. From here, any group information can be edited and is saved by clicking the Save button."/></Span></TextBlock>
+                        <Label Content="Deleting Email Groups" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="You can delete email groups from the system. When editing an email group, you will have the option to 'Delete' the group at the bottom of the groups information. Selecting 'Delete' will remove the group (only the group will be deleted, the member's will still exist in the system)."/></Span></TextBlock>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Constant Contact" IsSelected="False" Background="Gray" Height="22" VerticalAlignment="Bottom" Margin="-2,0" >
+                    <StackPanel HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top">
+                        <TextBlock TextWrapping="Wrap" Text="The Constant Contact page is used to send email campaign messages as well as managing contact lists in Constant Contact." HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />
+                        <Label Content="Refreshing Constant Contact" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="When first using the Constant Contact screen, you will need to refresh the application with your latest data from Constant Contact. Choose the 'Refresh' button in the upper-right corner to load in your latest data from Constant Contact. You will be prompted to sign into your Constant Contact account if you have not already signed in. After a few moments, your data will be loaded into the application from Constant Contact. You will periodically need to refresh your data again as new contact lists and email campaigns are added/removed from your account."/></Span></TextBlock>
+                        <Label Content="Sending an Email Campaign Message" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="The lower left pane contains a list of all email campaign messages that have been created in Constant Contact. Choose the 'Select' button to preview the Email Campaign Message. You can select a Contact List from the upper-left pane by choosing 'Select' and the contact list will be added as a recipient. Click the 'Send' button to send your Email Campaign to your selected Contact List(s). NOTE: You can only send an Email Campaing to contacts in a Contact List who have not already been sent this message. If you try to send a Email Campaing Message to a contact more than once, only the first will send. This is a limitation of the Constant Contact serivce."/></Span></TextBlock>
+                        <Label Content="Logging Out of Constant Contact" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="You can log out of the Constant Contact service by choosing the 'Logout' button. This will log you out of your account but your last refreshed data will still be visible. You cannot send an Email Campaign Activity or add/edit Contact Lists while logged out."/></Span></TextBlock>
+                        <Label Content="Creating New Contact Lists" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="Create new constact lists in Constant Contact by choosing 'Add' in the upper-left pane. A form will appear that will allow you to provide a Contact List name, add notes and add contacts that are already saved in Constant Contact. Choose 'Add' on the form to create the Contact List and save to Constant Contact."/></Span></TextBlock>
+                        <Label Content="Editing Existing Contact Lists" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="All Contact Lists in Contact Contact can be edited by choosing the 'Edit' button next to a Contact List in the upper-right pane. This will take you to the form containing the Contact Lists' information. Edit any of the information as needed and choose 'Save' to save your changes."/></Span></TextBlock>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Generate Reports" IsSelected="False" Background="Gray" Height="22" VerticalAlignment="Bottom" Margin="-2,0" >
+                    <StackPanel HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top">
+                        <TextBlock TextWrapping="Wrap" Text="The Generate Reports page is used to generate various reports about the data stored within the program." HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />
+                        <Label Content="Generating Reports" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="Reports are generated within the Generate Reports tab by selecting a report type and the desired fields to include in the report, all desired fields that will be included in the report will appear in the pane to the right. Click the 'Create Report' button to generate the report in 'Excel'. Please note, you will need to close Excel in order to generate a new report again."/></Span></TextBlock>
+                        <Label Content="Saving Report Criteria" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="All the criteria for a report can be saved for easy access back to the report. With a report generated, choose the 'Save Report Type' button. Provide a name for your report and choose 'Save Template'. The report criteria is now saved and can be accessed again from the 'Saved Reports' tab by clicking the 'View Report' button next to your newly saved report."/></Span></TextBlock>
+                        <Label Content="Exporting Reports to Excel" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="All reports are generated using Excel, so you can save the Excel generated report by choosing 'File' from the Excel Ribbon and selecting 'Save As' to save the report to your file system. In addition, you can also export a Saved Report to Excel by navigating to the 'Saved Reports' tab and choosing 'Export to Excel'. A dialog box will appear asking where to save the report and to give it a name. Once the report is saved, it will open automatically."/></Span></TextBlock>
+                        <Label Content="Viewing Saved Reports" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="On the Saved Reports tab, previously saved reports are displayed and can be either viewed, exported to Excel, or deleted by pressing the corresponding button."/></Span></TextBlock>
+                        <Label Content="Deleting Saved Reports" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="You can delete saved report criteria by navigating to the 'Saved Reports' tab and selecting the 'Delete Report' button. The report criteria will be deleted from the system."/></Span></TextBlock>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Validate Website" IsSelected="False" Background="Gray" Height="22" VerticalAlignment="Bottom" Margin="-2,0" >
+                    <StackPanel HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top">
+                        <TextBlock TextWrapping="Wrap" Text="The Validate Website page is used to view unpublished previews of Membership Details that need to be updated within the Chamber of Commerce Weebly Website." HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" />
+                        <Label Content="Refreshing the Preview" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" Text="Click the 'Refresh' button in the upper-right corner, a preview of the membership details will generate in the preview window. The preview will contain member details in alphabetical order, by business category and associate levels. You can also preview the content generated in your web browser by selecting 'Preview in Web Browser'. This will display the preview with the button's enabled for you to test." HorizontalAlignment="Left" Margin="10"/>
+                        <Label Content="Copy Preview to Clipboard" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" Text="When you are ready to publish the preview to the Weebly Website. Click the 'Copy Content' button to copy the Membership Details to your clipboard. Navigate to your Weebly Website and delete the old HTML from your site. Paste the new content in your Clipboard in its place. Your webpage should now have the most up-to-date Membership details. You can re-publish your Weebly page from this point." HorizontalAlignment="Left" Margin="10"/>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="TODOs" IsSelected="False" Background="Gray" Height="22" VerticalAlignment="Bottom" Margin="-2,0" >
+                    <StackPanel HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top">
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" ><Span><Run Text="The TODOs page is used to show when Backups of the system need to be completed (If backup notifications are enabled)."/></Span></TextBlock>
+                        <Label Content="Backup Reminder Tasks" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="If Backup Notifications are enabled, this screen whill show TODO notifications reminding to perform a backup of the system. You can mark a TODO notification as complete by selecting 'Done'. If you have many backup notifications and you would like to mark them all as done, choose the 'Mark All As Done' button."/></Span></TextBlock>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Header="Settings" IsSelected="False" Background="Gray" Height="22" VerticalAlignment="Bottom" Margin="-2,0" >
+                    <StackPanel HorizontalAlignment="Left" Grid.RowSpan="3" VerticalAlignment="Top">
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" ><Span><Run Text="The Settings page displays necessary settings that can be altered in the application."/></Span></TextBlock>
+                        <Label Content="The Backup &amp; Restore Tab" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="The Backup &amp; Restore tab is used to manage backup and restore settings."/></Span></TextBlock>
+                        <Label Content="Creating Backups" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Run Text="The backup file location can be altered from the Backup &amp; Restore tab by clicking the Browse… button and navigating to the desired backup location. Backups are then created by clicking the Create Backup Now button."/></TextBlock>
+                        <Label Content="Backup Notifications" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Run Text="Backup notification settings can be managed from the Backup &amp; Restore tab by selecting a frequency from the drop down and a time. Backup notifications will be displayed on the TODOs screen."/></TextBlock>
+                        <Label Content="Restoring Backups" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Run Text="Previous backups can be restored by selecting the Restore From Backup button and selecting the desired backup."/></TextBlock>
+                        <Label Content="The Edit Fields Tab" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="The Edit Fields tab allows member information fields to be altered or added."/></Span></TextBlock>
+                        <Label Content="Creating New Fields" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10"><Span><Run Text="Fields can be created by clicking the Add Field button at the end of the list. This will display the necessary information to store a new field, and the field is saved by clicking the Add Field button."/></Span></TextBlock>
+                        <Label Content="Editing Fields" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10" Text="Fields can be edited by clicking the Edit button at the end of the corresponding row."/>
+                        <Label Content="Importing Member Data from Excel" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10" Text="Under the 'Edit Fields' tab, you can import new member data from an Excel spreadsheet by selecting 'Import from Excel'. Choose the desired Excel data containing the membership data to import. NOTE: The upload process may take a few minutes depending on the size of the file."/>
+                        <Label Content="Importing PayPal Payment Data from CSV File" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" />
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Margin="10" Text="Under the 'PayPal' tab, you can import Payment data from a CSV export from PayPal by selecting 'Import from PayPal'. Choose the PayPal CSV file containing the payment data to import. NOTE: The upload process may take a few minutes depending on the size of the file."/>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
